@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css" integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />    
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div class="img"><img src="img/jack-o-lantern.png" id="icon"></div>
+    <div class="splitter">
+      <p>S P L I<br/>T T E R</p>
+    </div>
+    <div class="around-calculator">
+      <div class="calculator">
+        <div class="left-side">
+          <label for="">BILL</label>
+            <div class="amount-wrapper">
+                <input id="bill" class="cal-input" name="amount" type="number" placeholder="0" autocomplete="off"/>
+            </div>
+            <div class="select-tip">
+                <label for="">Select Tip %</label>
+                <div class="tips-wrapper">
+                    <radio id="p5" data-num=".05" class="button">5%</radio>
+                    <radio id="p10" data-num=".1" class="button">10%</radio>
+                    <radio id="p15" data-num=".15" class="button">15%</radio>
+                </div>
+                <div class="tips-wrapper">
+                    <radio id="p20" data-num=".2" class="button">20%</radio>
+                    <radio id="p30" data-num=".3" class="button">30%</radio>
+                    <input id="pCustom" class="tip-item-custom custom" placeholder="0-100%" type="number"></input>
+                </div>
+            </div>
+            <label for="">Number of people</label>
+            <div class="people-wrapper">
+                <i class="fas fa-user"></i>
+                <input id="nop" class="cal-input" name="nop" type="number" placeholder="0" />
+            </div>
+        </div>    
+        <div class="right-side">
+          <div class="amount-container">
+            <div class="amount">
+              <div class="tip-total">
+                <div class="amount-text">Tip Amount</div>
+                <div class="person">/person</div>
+              </div>
+              <div class="numbers" id="tipPer">$0.00</div>
+            </div>
+            <div class="amount">
+              <div class="tip-total">
+                <div class="amount-text">Total</div>
+                <div class="person">/person</div>
+              </div>
+              <div class="numbers" id="totalPer">$0.00</div>
+            </div>
+            <div class="button-container"><button class="reset" onClick="window.location.reload();">RESET</button></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <div class="attribution"><p><div class="challenge">
+    Challenge by&nbsp;<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</div><br><div class="codedBy">Coded by&nbsp;<a href="#">Martin Hernandez</a>.</div></p>
+  </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--background-color);
+  font-family: "Space Mono", monospace;
+  box-sizing: border-box;
+}
+
+:root {
+  --letter-color: rgb(16, 150, 132);
+  --background-color: #c4e3e6;
+  --reset-color: #0ab2bb;
+  --input-color: rgb(52, 52, 52);
+  --bold-color: rgb(11, 68, 68);
+  --whites: rgb(255, 255, 255);
+  --box-shadows: rgb(129, 129, 129);
+}
+
+.dark-theme {
+  --letter-color: rgb(129, 107, 10);
+  --background-color: #19154d;
+  --reset-color: var(--letter-color);
+  --input-color: rgb(52, 52, 52);
+  --bold-color: rgb(39, 48, 48);
+  --whites: rgb(197, 105, 20);
+  --box-shadows: rgb(39, 48, 48);
+}
+
+#icon {
+  width: 45px;
+  cursor: pointer;
+}
+.splitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  color: var(--letter-color);
+}
+
+.around-calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calculator {
+  display: flex;
+  flex: 1;
+  background-color: var(--whites);
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5%;
+  padding-inline: 15px;
+}
+
+.cal-input {
+  background: var(--whites);
+  display: block;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px var(--box-shadows);
+  padding: 6px;
+  border-radius: 6px;
+  text-align: right;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 0px;
+  width: 93%;
+}
+.cal-input::placeholder {
+  color: var(--box-shadows);
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  background-color: var(--whites);
+  height: 260px;
+  width: 200px;
+  border-radius: 5%;
+  margin: 15px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 30px;
+  background-color: var(--bold-color);
+  height: 260px;
+  width: 180px;
+  border-radius: 5%;
+}
+
+.button {
+  flex: 1;
+  background: var(--bold-color);
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  color: var(--whites);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.button:hover {
+  flex: 1;
+  background: var(--reset-color);
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  color: var(--bold-color);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.tip-item-custom {
+  display: flex;
+  flex: 1;
+  background-color: var(--reset-color);
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  color: var(--bold-color);
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  width: 20px;
+}
+
+.custom::placeholder {
+  flex: 1;
+  color: var(--box-shadows);
+  font-size: 10px;
+}
+
+.people-wrapper {
+  position: relative;
+}
+
+i.fas.fa-user {
+  position: absolute;
+  left: 7px;
+  top: 14px;
+  color: var(--box-shadows);
+  font-size: 0.9em;
+}
+
+.amount-wrapper {
+  position: relative;
+}
+
+.amount-wrapper:before {
+  content: "$";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--box-shadows);
+  font-size: 1.3em;
+}
+
+.tips-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.amount-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0px;
+  color: var(--whites);
+  font-size: 10px;
+}
+
+.amount {
+  display: flex;
+  flex: 1;
+  align-content: space-between;
+  flex-direction: row;
+  justify-items: flex-start;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.person {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: var(--letter-color);
+  font-size: 8px;
+}
+
+.amount-number {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-left: 5px;
+}
+
+.amount-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-total {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.numbers {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 25px;
+  color: var(--letter-color);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.reset {
+  flex: 1;
+  background: var(--reset-color);
+  text-align: center;
+  color: var(--bold-color);
+  font-size: 14px;
+  border: none;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.reset:hover {
+  background: var(--background-color);
+  color: var(--letter-color);
+}
+
+.attribution {
+  padding-top: 20px;
+  color: var(--letter-color);
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.challenge {
+  display: flex;
+  justify-content: center;
+}
+
+.codedBy {
+  display: flex;
+  justify-content: center;
+}
+/* MEDIA QUERIES*/
+@media screen and (max-width: 760px) {
+  .splitter {
+    margin-top: 10px;
+  }
+  .around-calculator {
+    width: 226px;
+  }
+  .calculator {
+    display: flex;
+    flex: 1;
+    background: var(--background-color);
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: canter;
+    border-radius: 3%;
+    padding: 0px;
+  }
+
+  .left-side {
+    padding-right: 23px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 190px;
+    padding-left: 12px;
+  }
+  .cal-input {
+    background: var(--whites);
+    display: block;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px var(--box-shadows);
+    padding: 6px;
+    border-radius: 6px;
+    text-align: right;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .right-side {
+    width: 185px;
+    height: 250px;
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .reset {
+    flex: 1;
+    background: var(--reset-color);
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 170px;
+    min-width: 170px;
+  }
+
+  p {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin-top: -10px;
+  }
+  .challenge {
+    font-size: 0.8rem;
+  }
+
+  .codedBy {
+    font-size: 0.8rem;
+    margin-top: -8px;
+  }
+}
