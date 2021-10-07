@@ -124,6 +124,17 @@ body {
   font-size: 14px;
 }
 
+.checked {
+  flex: 1;
+  background: var(--reset-color);
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  color: var(--bold-color);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 .tip-item-custom {
   display: flex;
   flex: 1;

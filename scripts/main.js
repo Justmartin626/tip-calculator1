@@ -51,13 +51,24 @@ function tipsCal(bill, numberOfPeople, tipPercentage) {
 let buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
-    custom.value = null;
+    custom.value = (button.dataset.num * 100);
     let tipPercent = button.dataset.num;
     button.dataset.num;
     tipsCal(bill.value, nop.value, tipPercent);
     totalCal(bill.value, nop.value, tipPercent);
   });
 });
+
+
+//  document.querySelector(".button").classList.toggle("checked");
+// button.classList.toggle("checked");
+// var clicked = false;
+// buttons.forEach((button) => {
+// if(custom.value = (button.dataset.num)){
+//   button.classList.toggle("checked")
+// }
+// clicked = true;
+// })
 //If you input anything in custom amount, the calculations happen here
 let custom = document.querySelector(".custom");
 custom.addEventListener("input", function () {
@@ -66,7 +77,7 @@ custom.addEventListener("input", function () {
     custom.value = null;
   }
   if (custom.value < 0) {
-    alert("please don't use negative numbers");
+    alert("Please, don't use negative numbers");
     custom.value = null;
   }
   let tipPercent = custom.value / 100;
@@ -76,6 +87,10 @@ custom.addEventListener("input", function () {
 //If you input anything in number of people, the calculations happen here
 let nop = document.getElementById("nop");
 nop.addEventListener("input", function () {
+  if (nop.value < 0) {
+    alert("Please, don't use negative numbers.");
+    nop.value = null;
+  }
   let tipPercent = custom.value / 100;
   tipsCal(bill.value, nop.value, tipPercent);
   totalCal(bill.value, nop.value, tipPercent);
@@ -83,7 +98,32 @@ nop.addEventListener("input", function () {
 //If you input anything in bill amount, the calculations happen here
 let bill = document.getElementById("bill");
 bill.addEventListener("input", function () {
+  if (bill.value < 0) {
+    alert("please don't use negative numbers");
+    bill.value = null;
+  }
   let tipPercent = custom.value / 100;
   tipsCal(bill.value, nop.value, tipPercent);
   totalCal(bill.value, nop.value, tipPercent);
 });
+
+let reset = document.getElementById("reset");
+reset.addEventListener("click", function () {
+  custom.value = null;
+  nop.value = null;
+  bill.value = null;
+  totalPer.innerHTML = "$0.00";
+  tipPer.innerHTML = "$0.00";
+});
+
+// buttons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     if ((document.getElementById("p5").checked = true)) {
+//       document.getElementById("p10").checked = false;
+//       document.getElementById("p15").checked = false;
+//       document.getElementById("p20").checked = false;
+//       document.getElementById("p30").checked = false;
+//       console.log(document.getElementById("p5"));
+//     }
+//   });
+// });
