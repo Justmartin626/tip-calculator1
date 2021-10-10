@@ -51,7 +51,7 @@ function tipsCal(bill, numberOfPeople, tipPercentage) {
 let buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
-    custom.value = (button.dataset.num * 100);
+    custom.value = button.dataset.num * 100;
     let tipPercent = button.dataset.num;
     button.dataset.num;
     tipsCal(bill.value, nop.value, tipPercent);
@@ -59,16 +59,6 @@ buttons.forEach((button) => {
   });
 });
 
-
-//  document.querySelector(".button").classList.toggle("checked");
-// button.classList.toggle("checked");
-// var clicked = false;
-// buttons.forEach((button) => {
-// if(custom.value = (button.dataset.num)){
-//   button.classList.toggle("checked")
-// }
-// clicked = true;
-// })
 //If you input anything in custom amount, the calculations happen here
 let custom = document.querySelector(".custom");
 custom.addEventListener("input", function () {
